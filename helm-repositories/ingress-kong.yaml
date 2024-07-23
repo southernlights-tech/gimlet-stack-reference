@@ -1,0 +1,11 @@
+{{ if .nginx.enabled -}}
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: ingress-kong
+  namespace: infrastructure
+spec:
+  interval: 60m
+  url: https://github.com/Kong/charts/tree/main/charts/ingress 
+{{- end }}
